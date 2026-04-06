@@ -1,58 +1,159 @@
-# Urjaa mindZz: Final Production Launch Package
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-This document serves as the master index for the **Urjaa mindZz** platform. All screens have been refined for high-fidelity production, featuring extra-large branding, full responsiveness, and an integrated admin ecosystem.
+<title>Urjaa Mindz</title>
 
----
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-## 🚀 1. Marketing & Public Entry
-*The brand's first touchpoints, optimized for conversion and trust.*
+<!-- Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
 
-- [**Desktop Homepage (Extra Large Logo)**]({{DATA:SCREEN:SCREEN_54}}): The main entry point with integrated Founders' story, Mission, Instagram Reels, and Google Reviews.
-- [**Mobile Homepage (Extra Large Logo)**]({{DATA:SCREEN:SCREEN_130}}): The fully responsive mobile landing experience.
-- [**Subscription Plans**]({{DATA:SCREEN:SCREEN_158}}): Transparent pricing with tactile 3D cards.
-- [**Payment Confirmation**]({{DATA:SCREEN:SCREEN_44}}): A simple, secure checkout flow.
-- [**Mobile Login**]({{DATA:SCREEN:SCREEN_5}}): Warm entry with phone/social login.
-- [**OTP Verification**]({{DATA:SCREEN:SCREEN_97}}): Clean mobile verification.
+<!-- Tailwind -->
+<script src="https://cdn.tailwindcss.com"></script>
 
----
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: "#7c6100",
+        secondary: "#a74632",
+        surface: "#fefcf4"
+      }
+    }
+  }
+}
+</script>
 
-## 👩‍👧 2. Parent's Learning Journey
-*The core engagement ecosystem for mothers and toddlers.*
+<style>
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background:#fefcf4;
+}
+.noto-serif { font-family: 'Noto Serif', serif; }
+</style>
 
-- [**Parent Dashboard (Mobile - Extra Large Logo)**]({{DATA:SCREEN:SCREEN_4}}): The daily hub for activities and growth tracking.
-- [**3D Video Activity Player**]({{DATA:SCREEN:SCREEN_12}}): Guided learning with tactile 3D steps.
-- [**Mobile Flashcards Viewer**]({{DATA:SCREEN:SCREEN_27}}): Toddler-friendly, automated learning tool.
-- [**Resource Library (Refined)**]({{DATA:SCREEN:SCREEN_74}}): Searchable Montessori and RBE guides with active filter chips.
-- [**Milestone Insights (Refined)**]({{DATA:SCREEN:SCREEN_124}}): Deep-dive developmental data and expert guidance.
-- [**Milestone Celebration**]({{DATA:SCREEN:SCREEN_164}}): Rewarding wins with high-energy success screens.
-- [**Milestone Gallery**]({{DATA:SCREEN:SCREEN_159}}): A premium digital scrapbook for badges.
+</head>
 
----
+<body>
 
-## 💬 3. Support & Community
-*Spaces for expert connection and shared experiences.*
+<!-- NAVBAR -->
+<nav class="fixed top-0 w-full bg-white shadow z-50 px-8 py-4 flex justify-between items-center">
+<div class="font-bold text-xl">Urjaa Mindz</div>
+<div class="hidden md:flex gap-6 font-semibold">
+<a href="#home">Home</a>
+<a href="#story">Our Story</a>
+<a href="#programs">Programs</a>
+<a href="#toolkit">Toolkit</a>
+<a href="#community">Community</a>
+</div>
+</nav>
 
-- [**Expert Specialist Chat (Refined)**]({{DATA:SCREEN:SCREEN_19}}): Secure, professional desktop consultation hub.
-- [**Expert Booking Flow**]({{DATA:SCREEN:SCREEN_136}}): Bubbly calendar and appointment scheduling.
-- [**Community Forum**]({{DATA:SCREEN:SCREEN_7}}): A vibrant space for mom-to-mom support.
-- [**Forum Thread Detail**]({{DATA:SCREEN:SCREEN_101}}): Focused discussion view with expert highlighting.
+<!-- ================= HOME ================= -->
+<section id="home" class="pt-28 px-6 max-w-7xl mx-auto">
 
----
+<h1 class="noto-serif text-5xl font-black mb-6">
+Nurturing <span class="text-primary italic">Brilliant</span> Minds
+</h1>
 
-## 🛠️ 4. Administrative Command Center
-*The powerful backend tools for platform management.*
+<p class="text-lg mb-10">
+Science-backed programs designed to stimulate toddler brain development through play and connection.
+</p>
 
-- [**Admin Hub (Desktop - Extra Large Logo)**]({{DATA:SCREEN:SCREEN_79}}): Central performance and activity dashboard.
-- [**Inquiries Hub (Production Ready)**]({{DATA:SCREEN:SCREEN_119}}): Managing parent leads with direct WhatsApp integration.
-- [**Social & Reviews Admin**]({{DATA:SCREEN:SCREEN_118}}): Controlling Instagram Reels and Google Reviews dynamically.
-- [**Activities Admin (Refined)**]({{DATA:SCREEN:SCREEN_48}}): Full video and guide library management.
-- [**Flashcard Admin (Refined)**]({{DATA:SCREEN:SCREEN_47}}): Organizing and tracking developmental card decks.
-- [**Activity Upload Flow (Refined)**]({{DATA:SCREEN:SCREEN_55}}): Step-by-step content publishing.
+</section>
 
----
+<!-- ================= STORY ================= -->
+<section id="story" class="py-24 px-6 max-w-7xl mx-auto">
 
-## 🎨 Design Foundation
-Built on the **Lullaby Loft** design system:
-- **Font**: Plus Jakarta Sans
-- **Aesthetic**: "The Curated Playroom" (Tactile 3D, Soft Pastels, Chunky UI)
-- **Branding**: Extra-large **Urjaa mindZz** logo integration.
+<h2 class="text-4xl font-bold mb-8 noto-serif">Our Story & Philosophy</h2>
+
+<p class="text-lg leading-relaxed max-w-3xl">
+Urjaa Mindz was born from a simple realization — a child’s potential unfolds when nurtured with love, awareness, and stimulation.
+</p>
+
+<div class="grid grid-cols-2 gap-6 mt-10">
+<div>💞 Emotional security</div>
+<div>🧠 Brain stimulation</div>
+<div>🌈 Sensory experiences</div>
+<div>💖 Bonding</div>
+</div>
+
+</section>
+
+<!-- ================= PROGRAMS ================= -->
+<section id="programs" class="py-24 px-6 max-w-7xl mx-auto">
+
+<h2 class="text-4xl font-bold mb-12 noto-serif">Programs</h2>
+
+<div class="grid md:grid-cols-3 gap-8">
+
+<div class="p-6 bg-white shadow rounded-xl">
+<h3 class="font-bold text-xl mb-3">Sensory Play</h3>
+<p>Build neural pathways through touch and exploration.</p>
+</div>
+
+<div class="p-6 bg-white shadow rounded-xl">
+<h3 class="font-bold text-xl mb-3">Memory & Focus</h3>
+<p>Improve retention and attention span through play.</p>
+</div>
+
+<div class="p-6 bg-white shadow rounded-xl">
+<h3 class="font-bold text-xl mb-3">Cognitive Growth</h3>
+<p>Enhance thinking and problem-solving abilities.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= TOOLKIT ================= -->
+<section id="toolkit" class="py-24 px-6 max-w-7xl mx-auto">
+
+<h2 class="text-4xl font-bold mb-8 noto-serif">Urjaa Toolkit</h2>
+
+<p class="max-w-3xl">
+Practical tools and resources for parents to engage children without screens and guilt.
+</p>
+
+<div class="mt-10 grid md:grid-cols-3 gap-6">
+<div class="p-6 bg-white shadow rounded-xl">Sensory Play Guides</div>
+<div class="p-6 bg-white shadow rounded-xl">Daily Activities</div>
+<div class="p-6 bg-white shadow rounded-xl">Parenting Frameworks</div>
+</div>
+
+</section>
+
+<!-- ================= COMMUNITY ================= -->
+<section id="community" class="py-24 px-6 max-w-7xl mx-auto">
+
+<h2 class="text-4xl font-bold mb-8 noto-serif">Community</h2>
+
+<p class="max-w-3xl mb-10">
+A safe space for mothers to share, learn, and grow together.
+</p>
+
+<div class="grid md:grid-cols-2 gap-6">
+<div class="p-6 bg-white shadow rounded-xl">
+<h3 class="font-bold">Parenting Discussions</h3>
+<p>Real conversations and shared experiences.</p>
+</div>
+
+<div class="p-6 bg-white shadow rounded-xl">
+<h3 class="font-bold">Stories</h3>
+<p>Learn from real journeys of mindful parenting.</p>
+</div>
+</div>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="py-10 text-center text-sm text-gray-500">
+© 2026 Urjaa Mindz
+</footer>
+
+</body>
+</html>
