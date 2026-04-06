@@ -1,1 +1,0 @@
-# Urjaa-MindZz-Website
