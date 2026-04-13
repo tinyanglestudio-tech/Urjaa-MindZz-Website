@@ -89,15 +89,26 @@
         .organic-blob { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
         .hover-3d { transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
         .hover-3d:hover { transform: translateY(-8px); box-shadow: 0 20px 40px -15px rgba(124, 97, 0, 0.3); }
+        
+        /* Mobile Menu Transitions */
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+        }
+        #mobile-menu.hidden {
+            display: none;
+            opacity: 0;
+            transform: translateY(-10px);
+        }
     </style>
 </head>
 <body class="bg-surface overflow-x-hidden">
 <!-- Top Navigation -->
-<header class="bg-[#fefcf4]/95 dark:bg-stone-900/95 backdrop-blur-md sticky top-0 z-50 rounded-b-[3rem] shadow-sm dark:shadow-none">
-<nav class="flex justify-between items-center w-full px-8 py-2 max-w-7xl mx-auto">
+<header class="bg-[#fefcf4] dark:bg-stone-900 sticky top-0 z-50 rounded-b-[3rem] shadow-sm dark:shadow-none">
+<nav class="flex justify-between items-center w-full px-8 py-2 max-w-7xl mx-auto relative">
 <a class="block" href="index.html">
 <img alt="Urjaa Mindz Logo" class="w-auto object-contain h-24 md:h-28 mix-blend-multiply" src="https://lh3.googleusercontent.com/aida/ADBb0ujGb0SmHnsu0yf7To3OTjK7bcuvBgsvxDIsryxl_CJYCmimcQO-XaV0FTtAu8ln0WHkYTgMCyUBiWK7nnwWkTNMjwbIyvMbe9P22c6-RgLRH-U4U0cP6er_rH0j51OuZl4ihPqCbDqX-_WOVSJjkSAq-IPm-F99a4ucMvCGLfDpazGwWg7rnpncCz5UewJfzL5h25yMdPJupKo8bS0xg630GfoB8NVW75K3f5mSHoixeAwr0CzvmBqZStOg0tipWrx6SGeO7S16n-4"/>
 </a>
+<!-- Desktop Nav -->
 <div class="hidden md:flex items-center gap-8 font-['Noto_Serif'] text-lg font-bold tracking-tight">
 <a class="text-[#383833] dark:text-stone-300 hover:text-[#F4C430] hover:scale-105 transition-transform duration-300" href="index.html">Home</a>
 <a class="text-[#383833] dark:text-stone-300 hover:text-[#F4C430] hover:scale-105 transition-transform duration-300" href="story.html">Our Story</a>
@@ -105,9 +116,44 @@
 <a class="text-[#F4C430] scale-105 transition-transform duration-300 border-b-2 border-[#F4C430]" href="toolkit.html">Toolkit</a>
 <a class="text-[#383833] dark:text-stone-300 hover:text-[#F4C430] hover:scale-105 transition-transform duration-300" href="community.html">Community</a>
 </div>
-<a class="bg-[#F4C430] text-on-primary-container px-6 py-2 rounded-full font-bold hover:scale-105 transition-transform duration-300 active:scale-95 duration-150 inline-block" href="#join-cta">Join Now</a>
+<div class="flex items-center gap-4">
+<a class="hidden md:inline-block bg-[#F4C430] text-on-primary-container px-6 py-2 rounded-full font-bold hover:scale-105 transition-transform duration-300 active:scale-95 duration-150" href="#join-cta">Join Now</a>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-[#383833] dark:text-stone-300 p-2 focus:outline-none" id="menu-toggle">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+</div>
+<!-- Mobile Menu Dropdown -->
+<div class="hidden absolute top-full left-0 right-0 bg-white/95 dark:bg-stone-900/95 backdrop-blur-md shadow-lg rounded-b-2xl p-6 flex flex-col gap-4 font-['Noto_Serif'] text-lg font-bold border-t border-surface-container md:hidden" id="mobile-menu">
+<a class="text-[#383833] dark:text-stone-300" href="index.html">Home</a>
+<a class="text-[#383833] dark:text-stone-300" href="story.html">Our Story</a>
+<a class="text-[#383833] dark:text-stone-300" href="programs.html">Programs</a>
+<a class="text-[#F4C430]" href="toolkit.html">Toolkit</a>
+<a class="text-[#383833] dark:text-stone-300" href="community.html">Community</a>
+<a class="bg-[#F4C430] text-on-primary-container px-6 py-3 rounded-full font-bold text-center mt-2" href="#join-cta">Join Now</a>
+</div>
 </nav>
 </header>
+<script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = this.querySelector('.material-symbols-outlined');
+            menu.classList.toggle('hidden');
+            if (menu.classList.contains('hidden')) {
+                icon.textContent = 'menu';
+            } else {
+                icon.textContent = 'close';
+            }
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+                document.querySelector('#menu-toggle .material-symbols-outlined').textContent = 'menu';
+            });
+        });
+    </script>
 <main class="max-w-7xl mx-auto px-6 py-12">
 <!-- Hero Section -->
 <section class="relative mb-24 overflow-hidden rounded-xl p-8 md:p-16 bg-surface-container-low">
@@ -267,7 +313,7 @@
 <!-- PDF Preview 3 -->
 <div class="group cursor-pointer hover-3d">
 <div class="aspect-[3/4] rounded-xl overflow-hidden mb-4 relative shadow-md">
-<img alt="Wooden blocks play" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM0gMcokSSqXQCzgvU0h18goKudl6BCEKGv3G-ew_TXpzVN196itFdml1uVy-4hnBkBJTd6psLObofWiKjW3k1xZaGia-xBwnLCAMTJr-tIIbyp-u0dpduHGwGWWWB_9SDxAmhvGP8xBNCX6gxR6mXDqJEbj3IaVuLS-18Lv8H34B_D_7oWZGaW14mUwA0tC56yAPbUBGL_f3mGEL4fKTWIOF5Va-FWfsx6Sd7A06I0SbrxQ4bRkbRMqM973pFFO3kxbMFBhO4WZ0e"/>
+<img alt="Wooden blocks play" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAM0gMcokSSXQCzgvU0h18goKudl6BCEKGv3G-ew_TXpzVN196itFdml1uVy-4hnBkBJTd6psLObofWiKjW3k1xZaGia-xBwnLCAMTJr-tIIbyp-u0dpduHGwGWWWB_9SDxAmhvGP8xBNCX6gxR6mXDqJEbj3IaVuLS-18Lv8H34B_D_7oWZGaW14mUwA0tC56yAPbUBGL_f3mGEL4fKTWIOF5Va-FWfsx6Sd7A06I0SbrxQ4bRkbRMqM973pFFO3kxbMFBhO4WZ0e"/>
 <div class="absolute inset-0 bg-black/20 group-hover:bg-black/0 transition-colors"></div>
 <div class="absolute bottom-4 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity w-[90%]">
 <button class="w-full py-3 bg-white text-primary rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg">
@@ -303,13 +349,13 @@
 </div>
 </section>
 <!-- Section: Articles & Tips -->
-<section class="mb-24">
+<section class="mb-24" id="articles">
 <h2 class="noto-serif text-4xl font-bold text-on-surface mb-12">Articles &amp; Expert Tips</h2>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
 <!-- Article 1 -->
 <article class="flex flex-col md:flex-row gap-8 items-start hover-3d p-4 rounded-xl transition-colors hover:bg-surface-container-low">
 <div class="w-full md:w-48 h-48 rounded-xl overflow-hidden flex-shrink-0 shadow-lg">
-<img alt="Mother and child" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpDn8WF6G920qLoBOgz72FpAGy3IH_HuRm8HZ6dtrRV6-dky_Auovw2kcqrkmpGF2byjnPP2_ZDapRWWeqUh2KJmzxfFz6VqZyrf_mFqdw6Fk8Gx5E3nuGyNSPht_QMk2-xtaUa3niIe-a0ImAQfAHHzmU8-9h4wxAyPndncGDWp_VLGU1RZ2t7I5Q3HnY0Bvi96sLSQLBvyKp5o35zMqPvoM_vM0-AmZeHZUZqYJqlyoiLyr_F23Edp3zQKI9ANz5-Xh9C3iQea-u"/>
+<img alt="Mother and child sharing eye contact" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpDn8WF6G920qLoBOgz72FpAGy3IH_HuRm8HZ6dtrRV6-dky_Auovw2kcqrkmpGF2byjnPP2_ZDapRWWeqUh2KJmzxfFz6VqZyrf_mFqdw6Fk8Gx5E3nuGyNSPht_QMk2-xtaUa3niIe-a0ImAQfAHHzmU8-9h4wxAyPndncGDWp_VLGU1RZ2t7I5Q3HnY0Bvi96sLSQLBvyKp5o35zMqPvoM_vM0-AmZeHZUZqYJqlyoiLyr_F23Edp3zQKI9ANz5-Xh9C3iQea-u"/>
 </div>
 <div>
 <div class="flex items-center gap-4 mb-3">
@@ -326,7 +372,7 @@
 <!-- Article 2 -->
 <article class="flex flex-col md:flex-row gap-8 items-start hover-3d p-4 rounded-xl transition-colors hover:bg-surface-container-low">
 <div class="w-full md:w-48 h-48 rounded-xl overflow-hidden flex-shrink-0 shadow-lg">
-<img alt="Healthy baby snacks" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC__07tgNvdtAtHQVItl2NUCkuYg76NucFfus2V6UAfMggLTb0i5_xw3vHr915bbzv47rWGr9pYxV0ku7r_aLU-t7M9PcP8J7-MNQ8XfRHA57WRUQ2pNYYpUmomJic821IBcKaLOVpwMclaVWLGSBpvDrRskbmEaLUmjHcfaEqjVCPdVk0z5jzvvpAuKT7KJAIfDYNXwDRCjrJwF_mOLJ-f8Ev5pk6Je-i3ld4O1TQpahqlxFb6m1n8puTm2irEM7uDBNNWm1ztcL-T"/>
+<img alt="Healthy baby snacks and herbs" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC__07tgNvdtAtHQVItl2NUCkuYg76NucFfus2V6UAfMggLTb0i5_xw3vHr915bbzv47rWGr9pYxV0ku7r_aLU-t7M9PcP8J7-MNQ8XfRHA57WRUQ2pNYYpUmomJic821IBcKaLOVpwMclaVWLGSBpvDrRskbmEaLUmjHcfaEqjVCPdVk0z5jzvvpAuKT7KJAIfDYNXwDRCjrJwF_mOLJ-f8Ev5pk6Je-i3ld4O1TQpahqlxFb6m1n8puTm2irEM7uDBNNWm1ztcL-T"/>
 </div>
 <div>
 <div class="flex items-center gap-4 mb-3">
@@ -349,15 +395,15 @@
 <div class="relative z-10 max-w-xl mx-auto">
 <h2 class="noto-serif text-3xl font-bold mb-4">Unlock the Weekly Wisdom</h2>
 <p class="mb-8 text-primary-container font-medium">Join 5,000+ mindful parents receiving weekly tips and toolkit updates.</p>
-<form class="flex flex-col md:flex-row gap-4">
-<input class="flex-grow px-6 py-4 rounded-full border-none focus:ring-4 focus:ring-primary-container text-on-surface font-medium" placeholder="Your best email address" type="email"/>
+<form class="flex flex-col md:flex-row gap-4" onsubmit="event.preventDefault();">
+<input class="flex-grow px-6 py-4 rounded-full border-none focus:ring-4 focus:ring-primary-container text-on-surface font-medium" placeholder="Your best email address" required="" type="email"/>
 <button class="bg-secondary px-8 py-4 rounded-full font-bold hover:scale-105 transition-transform">Subscribe Free</button>
 </form>
 </div>
 </section>
 </main>
 <!-- Footer -->
-<footer class="bg-[#fefcf4] dark:bg-stone-900 full-width rounded-t-[3rem] mt-20 tonal-layering">
+<footer class="bg-[#fefcf4] dark:bg-stone-900 full-width rounded-t-[3rem] mt-20">
 <div class="flex flex-col md:flex-row justify-between items-start w-full px-12 py-16 max-w-7xl mx-auto gap-8">
 <div class="max-w-xs">
 <a href="index.html">
@@ -373,8 +419,8 @@
 <ul class="space-y-2 font-['Noto_Serif'] text-base text-[#383833] dark:text-stone-400">
 <li><a class="hover:text-[#F4C430] transition-colors" href="index.html">Home</a></li>
 <li><a class="text-[#F4C430] font-bold" href="toolkit.html">Toolkit</a></li>
-<li><a class="hover:text-[#F4C430] transition-colors" href="toolkit.html#sensory-play">Sensory Guides</a></li>
-<li><a class="hover:text-[#F4C430] transition-colors" href="toolkit.html#articles">Article Vault</a></li>
+<li><a class="hover:text-[#F4C430] transition-colors" href="#sensory-play">Sensory Guides</a></li>
+<li><a class="hover:text-[#F4C430] transition-colors" href="#articles">Article Vault</a></li>
 </ul>
 </div>
 <div class="space-y-4">

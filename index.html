@@ -86,17 +86,19 @@
         .sanskrit-glow { text-shadow: 0 0 20px rgba(244, 196, 48, 0.3); }
         .card-3d-hover { transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
         .card-3d-hover:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 25px 50px -12px rgba(124, 97, 0, 0.25); }
-        /* Ensuring logo blends by removing any background if present in original and setting container background */
-        .logo-blend { mix-blend-mode: multiply; }
+        .logo-blend { mix-blend-mode: multiply; filter: contrast(1.1); }
+        #mobile-menu { display: none; }
+        #mobile-menu.active { display: block; }
     </style>
 </head>
 <body class="bg-surface text-on-surface selection:bg-primary-container">
 <!-- TopNavBar -->
 <header class="bg-surface/80 backdrop-blur-md sticky top-0 z-50 rounded-b-[3rem] shadow-sm">
-<nav class="flex justify-between items-center w-full px-8 py-4 max-w-7xl mx-auto">
+<nav class="flex justify-between items-center w-full px-6 md:px-8 py-4 max-w-7xl mx-auto">
 <a class="block" href="index.html">
-<img alt="Urjaa Mindz Logo" class="w-auto object-contain h-24 md:h-32 logo-blend" src="https://lh3.googleusercontent.com/aida/ADBb0ujGb0SmHnsu0yf7To3OTjK7bcuvBgsvxDIsryxl_CJYCmimcQO-XaV0FTtAu8ln0WHkYTgMCyUBiWK7nnwWkTNMjwbIyvMbe9P22c6-RgLRH-U4U0cP6er_rH0j51OuZl4ihPqCbDqX-_WOVSJjkSAq-IPm-F99a4ucMvCGLfDpazGwWg7rnpncCz5UewJfzL5h25yMdPJupKo8bS0xg630GfoB8NVW75K3f5mSHoixeAwr0CzvmBqZStOg0tipWrx6SGeO7S16n-4"/>
+<img alt="Urjaa Mindz Logo" class="w-auto object-contain h-20 md:h-32 logo-blend" src="https://lh3.googleusercontent.com/aida/ADBb0ujGb0SmHnsu0yf7To3OTjK7bcuvBgsvxDIsryxl_CJYCmimcQO-XaV0FTtAu8ln0WHkYTgMCyUBiWK7nnwWkTNMjwbIyvMbe9P22c6-RgLRH-U4U0cP6er_rH0j51OuZl4ihPqCbDqX-_WOVSJjkSAq-IPm-F99a4ucMvCGLfDpazGwWg7rnpncCz5UewJfzL5h25yMdPJupKo8bS0xg630GfoB8NVW75K3f5mSHoixeAwr0CzvmBqZStOg0tipWrx6SGeO7S16n-4"/>
 </a>
+<!-- Desktop Nav -->
 <div class="hidden md:flex items-center gap-8 font-['Noto_Serif'] text-lg font-bold tracking-tight">
 <a class="text-[#F4C430] border-b-2 border-[#F4C430] hover:scale-105 transition-transform duration-300" href="index.html">Home</a>
 <a class="text-[#383833] hover:text-[#F4C430] hover:scale-105 transition-transform duration-300" href="story.html">Our Story</a>
@@ -104,8 +106,24 @@
 <a class="text-[#383833] hover:text-[#F4C430] hover:scale-105 transition-transform duration-300" href="toolkit.html">Toolkit</a>
 <a class="text-[#383833] hover:text-[#F4C430] hover:scale-105 transition-transform duration-300" href="community.html">Community</a>
 </div>
-<a class="bg-[#F4C430] text-on-primary-container px-6 py-2 rounded-full font-bold hover:scale-105 transition-transform duration-300 active:scale-95 flex items-center justify-center" href="#join-cta">Join Now</a>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden p-2 text-on-surface" onclick="document.getElementById('mobile-menu').classList.toggle('active')">
+<span class="material-symbols-outlined text-3xl">menu</span>
+</button>
+<!-- Join Now Button - Link to section -->
+<a class="hidden md:flex bg-[#F4C430] text-on-primary-container px-6 py-2 rounded-full font-bold hover:scale-105 transition-transform duration-300 active:scale-95 items-center justify-center shadow-md" href="#join-cta">Join Now</a>
 </nav>
+<!-- Mobile Navigation Menu -->
+<div class="md:hidden bg-surface border-t border-surface-dim absolute top-full left-0 w-full shadow-lg rounded-b-2xl overflow-hidden" id="mobile-menu">
+<div class="flex flex-col p-6 gap-4 font-['Noto_Serif'] text-lg font-bold">
+<a class="text-[#F4C430]" href="index.html">Home</a>
+<a class="text-[#383833]" href="story.html">Our Story</a>
+<a class="text-[#383833]" href="programs.html">Programs</a>
+<a class="text-[#383833]" href="toolkit.html">Toolkit</a>
+<a class="text-[#383833]" href="community.html">Community</a>
+<a class="bg-[#F4C430] text-on-primary-container px-6 py-3 rounded-xl text-center mt-2" href="#join-cta" onclick="document.getElementById('mobile-menu').classList.remove('active')">Join Now</a>
+</div>
+</div>
 </header>
 <main class="overflow-x-hidden">
 <!-- Hero Section -->
@@ -119,17 +137,17 @@
 <span class="text-secondary font-semibold tracking-widest uppercase text-sm bg-secondary-container/30 px-6 py-2 rounded-full">Radiant Nurturing</span>
 </div>
 <h1 class="serif-text text-6xl md:text-9xl font-bold text-secondary mb-8 leading-tight sanskrit-glow">
-                स्नेहेन वर्धते बुद्धिः
-            </h1>
+                    स्नेहेन वर्धते बुद्धिः
+                </h1>
 <p class="text-xl md:text-2xl text-on-surface-variant font-medium max-w-3xl mx-auto mb-12 serif-text italic leading-relaxed">
-                "As a mother, you are the first light your child sees. At Urjaa Mindz, we believe with affection, the intellect grows—nurturing the next generation through love, heart-centered play, and ancient wisdom."
-            </p>
+                    "As a mother, you are the first light your child sees. At Urjaa Mindz, we believe with affection, the intellect grows—nurturing the next generation through love, heart-centered play, and ancient wisdom."
+                </p>
 <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
 <button class="bg-primary text-on-primary text-lg px-10 py-5 rounded-xl font-bold shadow-xl hover:scale-105 transition-all">Start Your Journey</button>
 <button class="flex items-center gap-3 text-secondary font-bold text-lg hover:underline decoration-2 underline-offset-8 group">
 <span class="material-symbols-outlined bg-secondary-container p-3 rounded-full group-hover:rotate-12 transition-transform">play_circle</span>
-                    See Our Vision
-                </button>
+                        See Our Vision
+                    </button>
 </div>
 </div>
 </section>
@@ -149,8 +167,8 @@
 </div>
 <div class="order-1 lg:order-2">
 <h2 class="serif-text text-secondary text-5xl md:text-7xl font-black mb-8 leading-tight sanskrit-glow">
-                    स्नेहेन वर्धते बुद्धिः
-                </h2>
+                        स्नेहेन वर्धते बुद्धिः
+                    </h2>
 <p class="text-2xl serif-text italic text-primary-dim mb-10">"Wisdom grows through love."</p>
 <div class="space-y-10 text-lg text-on-surface-variant">
 <div class="flex gap-6 items-start">
@@ -306,20 +324,20 @@
 </li>
 </ul>
 <p class="mt-8 p-4 bg-primary-container/20 rounded-lg text-sm italic text-secondary-dim font-medium">
-                            Through our 5 pillars — 👉 Love • Stimulate • Explore • Connect • Bloom — we create a strong, loving foundation for lifelong learning.
-                        </p>
+                                Through our 5 pillars — 👉 Love • Stimulate • Explore • Connect • Bloom — we create a strong, loving foundation for lifelong learning.
+                            </p>
 </div>
 </div>
 </div>
 </div>
 </section>
 <!-- Community CTA -->
-<section class="py-32 px-6 text-center bg-gradient-to-br from-primary-container/20 to-secondary-container/20" id="join-cta">
+<section class="py-32 px-6 text-center bg-gradient-to-br from-primary-container/20 to-secondary-container/20 scroll-mt-24" id="join-cta">
 <div class="max-w-4xl mx-auto">
 <h2 class="serif-text text-5xl md:text-7xl font-bold text-on-surface mb-8">Join the Urjaa Journey</h2>
 <p class="text-xl md:text-2xl text-on-surface-variant mb-12 max-w-2xl mx-auto">
-                Be part of a thriving community of 5,000+ mothers who are rediscovering the joy of nurturing.
-            </p>
+                    Be part of a thriving community of 5,000+ mothers who are rediscovering the joy of nurturing.
+                </p>
 <div class="bg-surface p-8 rounded-xl shadow-lg inline-block card-3d-hover">
 <div class="flex flex-col items-center gap-6">
 <div class="flex -space-x-4">
@@ -329,8 +347,8 @@
 </div>
 <span class="font-bold text-primary">5k+ Mothers Joined</span>
 <button class="bg-secondary text-on-secondary px-10 py-4 rounded-full font-bold text-lg hover:shadow-2xl transition-all active:scale-95" onclick="window.location.href='community.html'">
-                        Enter the Community
-                    </button>
+                            Enter the Community
+                        </button>
 </div>
 </div>
 </div>
@@ -342,8 +360,8 @@
 <img alt="Urjaa Mindz Logo" class="w-auto h-32 md:h-40 object-contain mx-auto logo-blend" src="https://lh3.googleusercontent.com/aida/ADBb0ujGb0SmHnsu0yf7To3OTjK7bcuvBgsvxDIsryxl_CJYCmimcQO-XaV0FTtAu8ln0WHkYTgMCyUBiWK7nnwWkTNMjwbIyvMbe9P22c6-RgLRH-U4U0cP6er_rH0j51OuZl4ihPqCbDqX-_WOVSJjkSAq-IPm-F99a4ucMvCGLfDpazGwWg7rnpncCz5UewJfzL5h25yMdPJupKo8bS0xg630GfoB8NVW75K3f5mSHoixeAwr0CzvmBqZStOg0tipWrx6SGeO7S16n-4"/>
 </a>
 <p class="serif-text text-3xl md:text-4xl font-bold text-secondary sanskrit-glow">
-        स्नेहेन वर्धते बुद्धिः
-    </p>
+            स्नेहेन वर्धते बुद्धिः
+        </p>
 <div class="flex flex-wrap justify-center gap-8">
 <a class="text-stone-900 font-bold border-b-2 border-secondary transition-colors" href="index.html">Home</a>
 <a class="text-stone-500 font-medium hover:text-stone-900 transition-colors" href="story.html">Our Story</a>

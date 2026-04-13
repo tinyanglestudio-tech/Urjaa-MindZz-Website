@@ -123,6 +123,9 @@
             z-index: 50 !important;
             box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.3);
         }
+        html {
+            scroll-behavior: smooth;
+        }
     </style>
 </head>
 <body class="bg-surface font-body text-on-surface">
@@ -130,14 +133,14 @@
 <header class="bg-[#fefcf4]/80 dark:bg-stone-900/80 backdrop-blur-md sticky top-0 z-50 rounded-b-[3rem] shadow-sm dark:shadow-none">
 <nav class="flex justify-between items-center w-full px-8 py-2 max-w-7xl mx-auto">
 <a class="block" href="index.html">
-<img alt="Urjaa Mindz Logo" class="w-auto object-contain h-24 md:h-32 mix-blend-multiply dark:mix-blend-normal" src="https://lh3.googleusercontent.com/aida/ADBb0ujGb0SmHnsu0yf7To3OTjK7bcuvBgsvxDIsryxl_CJYCmimcQO-XaV0FTtAu8ln0WHkYTgMCyUBiWK7nnwWkTNMjwbIyvMbe9P22c6-RgLRH-U4U0cP6er_rH0j51OuZl4ihPqCbDqX-_WOVSJjkSAq-IPm-F99a4ucMvCGLfDpazGwWg7rnpncCz5UewJfzL5h25yMdPJupKo8bS0xg630GfoB8NVW75K3f5mSHoixeAwr0CzvmBqZStOg0tipWrx6SGeO7S16n-4"/>
+<img alt="Urjaa Mindz Logo" class="w-auto object-contain h-24 md:h-32" src="https://lh3.googleusercontent.com/aida/ADBb0uiBGP0YdRualqJl2r8L6WYI_-2GFbQhusdhPGVVJ-dor4iKhW3suaT3FJDb0lr8u8_RkpX_s4Bn-R0lzZFsdo0rjhCIAxyAJSgnxT7M6JCCmJTIFDcBUNwpQgVFmDdDOC0y0dFLEONl_ORlFqdm-ERM1Zf5cAR-YZD34o5Q7UiDk-GTh4705KdjvIB7VIk9i8-ys9HPs-ZnZwu8BBajqOfVxsOyj_cV5QunaBdkiYporQ6fDEWw1VhXtpEYTOsB9hOCbOL3fallCCo"/>
 </a>
 <div class="hidden md:flex items-center gap-8 font-['Noto_Serif'] text-lg font-bold tracking-tight"><a class="text-[#383833] dark:text-stone-300 hover:text-[#F4C430] hover:scale-105 transition-transform duration-300" href="index.html">Home</a>
 <a class="text-[#383833] dark:text-stone-300 hover:text-[#F4C430] hover:scale-105 transition-transform duration-300" href="story.html">Our Story</a>
 <a class="text-[#383833] dark:text-stone-300 hover:text-[#F4C430] hover:scale-105 transition-transform duration-300" href="programs.html">Programs</a>
 <a class="text-[#383833] dark:text-stone-300 hover:text-[#F4C430] hover:scale-105 transition-transform duration-300" href="toolkit.html">Toolkit</a>
 <a class="text-[#F4C430] border-b-2 border-[#F4C430] pb-1 font-bold" href="community.html">Community</a></div>
-<button class="bg-[#F4C430] text-on-primary-container px-6 py-2 rounded-full font-bold hover:scale-105 transition-transform duration-300 active:scale-95 duration-150">Join Now</button>
+<a class="bg-[#F4C430] text-on-primary-container px-6 py-2 rounded-full font-bold hover:scale-105 transition-transform duration-300 active:scale-95 duration-150 inline-block text-center" href="#join-cta">Join Now</a>
 </nav>
 </header>
 <main>
@@ -341,21 +344,19 @@
 <div class="flex flex-col md:flex-row justify-between items-start w-full px-12 py-16 max-w-7xl mx-auto gap-8">
 <div class="flex-1">
 <div class="mb-4">
-<img alt="Urjaa Mindz Logo" class="w-auto object-contain h-32 md:h-40 mix-blend-multiply dark:mix-blend-normal" src="https://lh3.googleusercontent.com/aida/ADBb0ujGb0SmHnsu0yf7To3OTjK7bcuvBgsvxDIsryxl_CJYCmimcQO-XaV0FTtAu8ln0WHkYTgMCyUBiWK7nnwWkTNMjwbIyvMbe9P22c6-RgLRH-U4U0cP6er_rH0j51OuZl4ihPqCbDqX-_WOVSJjkSAq-IPm-F99a4ucMvCGLfDpazGwWg7rnpncCz5UewJfzL5h25yMdPJupKo8bS0xg630GfoB8NVW75K3f5mSHoixeAwr0CzvmBqZStOg0tipWrx6SGeO7S16n-4"/>
+<img alt="Urjaa Mindz Logo" class="w-auto object-contain h-32 md:h-40" src="https://lh3.googleusercontent.com/aida/ADBb0uiBGP0YdRualqJl2r8L6WYI_-2GFbQhusdhPGVVJ-dor4iKhW3suaT3FJDb0lr8u8_RkpX_s4Bn-R0lzZFsdo0rjhCIAxyAJSgnxT7M6JCCmJTIFDcBUNwpQgVFmDdDOC0y0dFLEONl_ORlFqdm-ERM1Zf5cAR-YZD34o5Q7UiDk-GTh4705KdjvIB7VIk9i8-ys9HPs-ZnZwu8BBajqOfVxsOyj_cV5QunaBdkiYporQ6fDEWw1VhXtpEYTOsB9hOCbOL3fallCCo"/>
 </div>
 <p class="font-['Noto_Serif'] text-base text-[#383833] dark:text-stone-400 max-w-sm">Nurturing the minds of tomorrow through the wisdom of today. A holistic approach to early childhood and maternal wellness.</p>
 </div>
 <div class="flex-1 grid grid-cols-2 gap-8">
 <div class="space-y-4">
 <h4 class="font-bold text-primary">Explore</h4>
-<ul class="space-y-2">
-<li><a class="text-[#383833] dark:text-stone-500 hover:text-[#F4C430] transition-colors" href="index.html">Home</a></li>
+<ul class="space-y-2"><li><a class="text-[#383833] dark:text-stone-500 hover:text-[#F4C430] transition-colors" href="index.html">Home</a></li>
 <li><a class="text-[#383833] dark:text-stone-500 hover:text-[#F4C430] transition-colors" href="story.html">Our Story</a></li>
 <li><a class="text-[#383833] dark:text-stone-500 hover:text-[#F4C430] transition-colors" href="programs.html">Programs</a></li>
-<li><a class="text-[#383833] dark:text-stone-500 hover:text-[#F4C430] transition-colors" href="programs.html">Workshops</a></li>
+<li><a class="text-[#383833] dark:text-stone-500 hover:text-[#F4C430] transition-colors" href="programs.html#workshops">Workshops</a></li>
 <li><a class="text-[#383833] dark:text-stone-500 hover:text-[#F4C430] transition-colors" href="toolkit.html">Toolkit</a></li>
-<li><a class="text-[#F4C430] font-bold" href="community.html">Community</a></li>
-</ul>
+<li><a class="text-[#F4C430] font-bold" href="community.html">Community</a></li></ul>
 </div>
 <div class="space-y-4">
 <h4 class="font-bold text-primary italic text-xl">स्नेहेन वर्धते बुद्धिः</h4>
